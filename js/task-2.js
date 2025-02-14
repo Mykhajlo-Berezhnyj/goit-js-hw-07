@@ -22,34 +22,18 @@ const images = [
   {
     url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
     alt: "Lighthouse Coast Sea",
-  }
+  },
 ];
 
 const gallery = document.querySelector(".gallery");
 
-gallery.style.display = 'flex';
-gallery.style.flexWrap = 'wrap';
-gallery.style.listStyle = 'none';
-gallery.style.gap = '24px';
-gallery.maxWidth = '1128px';
-
 const galleryItems = images.map(({ url, alt }) => {
-  const li = document.createElement('li');
-
-  li.style.flex = '0 0 calc(33.33% - 24px)';
-  li.style.marginBottom = '48px';
-
-  const img = document.createElement('img');
+  const li = document.createElement("li");
+  const img = document.createElement("img");
   img.src = url;
   img.alt = alt;
-  
-  img.style.width = '100%';
-  img.style.height = '300px';
-  img.style.objectFit = 'cover';
-  img.style.display = 'block';
 
   li.appendChild(img);
   return li;
-
-})
+});
 gallery.append(...galleryItems);
