@@ -85,12 +85,12 @@ buttonDestroy.addEventListener("click", () => {
       if (countdownValue <= 1) {
         countdownDiv.textContent = "Дані повністю видалені. Все очищено";
         boxesDestroy();
+        buttonCancel.remove();
       }
       if (countdownValue <= 0) {
         clearInterval(countdownTimer);
         modalDiv.remove();
         countdownDiv.remove();
-        buttonCancel.remove();
       }
     }, 1000);
     const buttonCancel = document.createElement("button");
@@ -108,7 +108,7 @@ buttonDestroy.addEventListener("click", () => {
       modalDiv.remove();
       countdownDiv.remove();
       buttonCancel.remove();
-      alert("Дякую, що перредумали і зберегли мені життя 😊");
+      alert("Дякую, що передумали і зберегли мені життя 😊");
     });
     return;
   }
